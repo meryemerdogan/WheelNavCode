@@ -17,10 +17,10 @@ public class Edge implements Comparable<Edge> {
         this.weight = weight;
     }
 
-    public int startVertex() 
+    public int from() 
     { return startVertex; }
     
-    public int endVertex() 
+    public int to() 
     { 
         return endVertex;
     }
