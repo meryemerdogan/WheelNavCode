@@ -11,7 +11,7 @@ public class Vertex{
         this.edges= new ArrayList<Edge>();
     }
 
-    public void addEdge(Vertex endVertex, Integer weight)
+    public void addEdge(Vertex endVertex, Double weight)
     {
         this.edges.add(new Edge(this, endVertex, weight));
     }

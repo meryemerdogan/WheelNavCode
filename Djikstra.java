@@ -4,7 +4,7 @@ public class Djikstra {
 
     public static Dictionary[] djikstra(Graph g, Vertex startingVertex)
     {
-        Dictionary<String, Integer> distances = new Hashtable<>();
+        Dictionary<String, Double> distances = new Hashtable<>();
         Dictionary<String, Vertex>  previous = new Hashtable<>();
 
         PriorityQueue<QueueObject> queue= new PriorityQueue<QueueObject>();
@@ -15,19 +15,19 @@ public class Djikstra {
         {
             if(v!=startingVertex)
             {
-                distances.put(v.getData(), Integer.MAX_VALUE);
+                distances.put(v.getData(), Double.MAX_VALUE);
             }
             previous.put(v.getData(), new Vertex("Null"));
         }
 
-        distances.put(startingVertex.getData(), 0);
+        distances.put(startingVertex.getData(), 0.0);
 
         while (queue.size() != 0)
         {
             Vertex current = queue.poll().vertex;
             for (Edge e: current.getEdges())
             {
-                Integer alternative = distances.get(current.getData()) + e.getWeight();
+                Double alternative = distances.get(current.getData()) + e.getWeight();
                 String neighbourValue = e.getEnd().getData();
 
                 if(alternative < distances.get(neighbourValue))
@@ -64,7 +64,7 @@ public class Djikstra {
         Dictionary distances = djikstraDictionaries[0];
         Dictionary previous = djikstraDictionaries[1];
 
-        Integer distance = (Integer) distances.get(targetVertex.getData());
+        Double distance = (Double) distances.get(targetVertex.getData());
         System.out.println("Shortest Distance between "+ startingVertex.getData()+" and "+targetVertex.getData());
         System.out.println(distance);
 
@@ -93,18 +93,20 @@ public class Djikstra {
         Vertex f =test.addVertex("F");
         Vertex g =test.addVertex("G");
 
-        test.addEdge(a,c,100);
-        test.addEdge(a,b,3);
-        test.addEdge(a,d,4);
-        test.addEdge(d,c,3);
-        test.addEdge(d,e,8);
-        test.addEdge(e,f,10);
-        test.addEdge(b,g,9);
-        test.addEdge(e,g,13);
-        test.addEdge(f,g,5);
+        test.addEdge(a,c,100.0);
+        test.addEdge(a,b,3.0);
+        test.addEdge(a,d,4.0);
+        test.addEdge(d,c,3.0);
+        test.addEdge(d,e,8.0);
+        test.addEdge(e,f,10.0);
+        test.addEdge(b,g,9.0);
+        test.addEdge(e,g,13.0);
+        test.addEdge(f,g,5.0);
 
         //djikstraResultPrinter(djikstra(test, a));
 
-        shortestPathBetween(test, g, a);
+        shortestPathBetween(test, a,g);
+
+    
     }
 }

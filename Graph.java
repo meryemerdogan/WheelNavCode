@@ -21,7 +21,7 @@ public class Graph {
         return newVertex;
     }
 
-    public void addEdge(Vertex vertex1, Vertex vertex2, Integer weight)
+    public void addEdge(Vertex vertex1, Vertex vertex2, Double weight)
     {
         if(!this.isWeighted)
         {
@@ -86,7 +86,7 @@ public class Graph {
         Vertex G1 = routeNetwork.addVertex("G1");
         Vertex G2= routeNetwork.addVertex("G2");
 
-        routeNetwork.addEdge(G1,G2,100);
+        routeNetwork.addEdge(G1,G2,100.0);
         routeNetwork.print();
 
     }

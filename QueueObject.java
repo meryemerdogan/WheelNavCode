@@ -2,9 +2,9 @@ import javax.lang.model.util.ElementScanner6;
 
 public class QueueObject implements Comparable<QueueObject> {
     public Vertex vertex;
-    public int priority;
+    public double priority;
 
-    public QueueObject(Vertex v, int p)
+    public QueueObject(Vertex v, double p)
     {
         this.vertex = v;
         this.priority= p;

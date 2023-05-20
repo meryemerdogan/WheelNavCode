@@ -2,9 +2,9 @@
 public class Edge{
     private Vertex start;
     private Vertex end;
-    private Integer weight;
+    private Double weight;
 
-    public Edge(Vertex startV, Vertex endV, Integer inputWeight)
+    public Edge(Vertex startV, Vertex endV, Double inputWeight)
     {
         this.start=startV;
         this.end= endV;
@@ -19,7 +19,7 @@ public class Edge{
     {
         return this.end;
     }
-    public Integer getWeight()
+    public Double getWeight()
     {
         return this.weight; 
     }
