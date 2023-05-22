@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Djikstra {
@@ -86,7 +88,24 @@ public class Djikstra {
 
         return path;
     }
+     
+    public Vertex[] returnVerticies(File f) throws FileNotFoundException
+    {
+        Scanner in = new Scanner(f);
+        int nuOfVerticies = in.nextInt();
+        Vertex [] verticies = new Vertex[nuOfVerticies];
+        
+        for (int i = 0; i < nuOfVerticies; i++) {
+            double longitude = in.nextDouble();
+            double latitude = in.nextDouble();
 
+            int id = in.nextInt(); 
+
+            verticies[i] = new Vertex(id,longitude,latitude);
+        }
+        return verticies;
+    }
+    
     public static double findDistanceBetweenTwoVertices(Vertex v1, Vertex v2){
         double horizontalDistance = v1.getLatitude()- v2.getLatitude();
         double verticalDistance = v1.getLongitude() -v2.getLongitude();
