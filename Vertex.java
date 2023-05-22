@@ -2,13 +2,16 @@ import java.util.ArrayList;
 
 public class Vertex{
 
-    private String data;
+    private int data;
     private ArrayList<Edge> edges;
-   
+    private double longitude;
+    private double latitude;
 
-    Vertex(String input)
+    Vertex(int id, double longitude, double latitude)
     {
-        this.data=input;
+        this.data = id;
+        this.longitude = longitude;
+        this.latitude = latitude;
         this.edges= new ArrayList<Edge>();
     }
 
@@ -22,9 +25,18 @@ public class Vertex{
         this.edges.removeIf(edge -> edge.getEnd().equals(endVertex));
     }
 
-    public String getData()
+    public int getID()
     {
         return this.data;
+    }
+
+    public double getLatitude(){
+        return this.latitude;
+
+    }
+
+    public double getLongitude(){
+        return this.longitude;
     }
 
     public ArrayList<Edge> getEdges()

@@ -14,9 +14,9 @@ public class Graph {
 
     }
 
-    public Vertex addVertex(String data)
+    public Vertex addVertex(int data, double lat, double longitude)
     {
-        Vertex newVertex = new Vertex(data);
+        Vertex newVertex = new Vertex(data,lat,longitude);
         this.vertices.add(newVertex);
         return newVertex;
     }
@@ -62,11 +62,11 @@ public class Graph {
     {
         return this.isDirected;
     }
-    public Vertex getVertexByValue(String value)
+    public Vertex getVertexByValue(int value)
     {
         for (Vertex v: this.vertices)
         {
-            if(v.getData().equals(value))
+            if(v.getID() == value)
             { 
                 return v;
             }
@@ -83,11 +83,12 @@ public class Graph {
     }
     public static void main(String[] args) {
         Graph routeNetwork= new Graph(true, true);
-        Vertex G1 = routeNetwork.addVertex("G1");
+        /*Vertex G1 = routeNetwork.addVertex("G1");
         Vertex G2= routeNetwork.addVertex("G2");
 
         routeNetwork.addEdge(G1,G2,100.0);
         routeNetwork.print();
 
+    */
     }
 }

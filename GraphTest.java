@@ -2,10 +2,10 @@ public class GraphTest {
 
  Graph map = new Graph(true, false);
 public static void main(String[] args) {
-    Graph test2 = new Graph(true, true);
-    Vertex z = test2.addVertex("0");
-    Vertex y = test2.addVertex("1");
-    Vertex x = test2.addVertex("2");
+    /*Graph test2 = new Graph(true, true);
+    Vertex z = test2.addVertex(0,3,3.26);
+    Vertex y = test2.addVertex(1,3,3);
+    Vertex x = test2.addVertex(2,4,5);
     Vertex t = test2.addVertex("3");
     Vertex k = test2.addVertex("4");
     Vertex m = test2.addVertex("5");
@@ -25,9 +25,11 @@ public static void main(String[] args) {
     test2.addEdge(l,z,0.58);
     test2.addEdge(l,k,0.93);
     test2.addEdge(n,t,0.39);
-
-
     Djikstra.shortestPathBetween(test2, z, l);
+    */
+
+
+    
 }
 
     

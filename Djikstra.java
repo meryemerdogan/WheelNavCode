@@ -5,8 +5,8 @@ public class Djikstra {
 
     private static Dictionary[] djikstra(Graph g, Vertex startingVertex)
     {
-        Dictionary<String, Double> distances = new Hashtable<>();
-        Dictionary<String, Vertex>  previous = new Hashtable<>();
+        Dictionary<Integer, Double> distances = new Hashtable<>();
+        Dictionary<Integer, Vertex>  previous = new Hashtable<>();
 
         PriorityQueue<QueueObject> queue= new PriorityQueue<QueueObject>();
 
@@ -16,20 +16,20 @@ public class Djikstra {
         {
             if(v!=startingVertex)
             {
-                distances.put(v.getData(), Double.MAX_VALUE);
+                distances.put(v.getID(), Double.MAX_VALUE);
             }
-            previous.put(v.getData(), new Vertex("Null"));
+            previous.put(v.getID(), new Vertex(-1,0.0,0.0));
         }
 
-        distances.put(startingVertex.getData(), 0.0);
+        distances.put(startingVertex.getID(), 0.0);
 
         while (queue.size() != 0)
         {
             Vertex current = queue.poll().vertex;
             for (Edge e: current.getEdges())
             {
-                Double alternative = distances.get(current.getData()) + e.getWeight();
-                String neighbourValue = e.getEnd().getData();
+                Double alternative = distances.get(current.getID()) + e.getWeight();
+                int neighbourValue = e.getEnd().getID();
 
                 if(alternative < distances.get(neighbourValue))
                 {
@@ -55,7 +55,7 @@ public class Djikstra {
         {
             String nextKey = keys.nextElement().toString();
             Vertex nextVertex= (Vertex) d[1].get(nextKey);
-            System.out.println(nextKey + ": "+ nextVertex.getData());
+            System.out.println(nextKey + ": "+ nextVertex.getID());
         }
     }
 
@@ -66,33 +66,39 @@ public class Djikstra {
         Dictionary previous = djikstraDictionaries[1];
         path = new ArrayList<>();
 
-        Double distance = (Double) distances.get(targetVertex.getData());
-        System.out.println("Shortest Distance between "+ startingVertex.getData()+" and "+targetVertex.getData());
+        Double distance = (Double) distances.get(targetVertex.getID());
+        System.out.println("Shortest Distance between "+ startingVertex.getID()+" and "+targetVertex.getID());
         System.out.println(distance);
 
         
         Vertex v = targetVertex; 
 
-        while(v.getData() != "Null")
+        while(v.getID() != -1)
         {
             path.add(0, v);
-            v= (Vertex) previous.get(v.getData());
+            v= (Vertex) previous.get(v.getID());
         }
         System.out.println("Shortest Path");
         for(Vertex pathVertex : path)
         {
-            System.out.println(pathVertex.getData());
+            System.out.println(pathVertex.getID());
         }
 
         return path;
+    }
+
+    public static double findDistanceBetweenTwoVertices(Vertex v1, Vertex v2){
+        double horizontalDistance = v1.getLatitude()- v2.getLatitude();
+        double verticalDistance = v1.getLongitude() -v2.getLongitude();
+        return Math.sqrt(Math.pow(horizontalDistance,2) + Math.pow(verticalDistance,2));
     }
      
 
 
     public static void main(String[] args) {
         Graph test = new Graph(true,true);
-        Vertex a =test.addVertex("A");
-        Vertex b =test.addVertex("B");
+       /* Vertex a =test.addVertex(0,3,3.26);
+        Vertex b =test.addVertex(1,);
         Vertex c =test.addVertex("C");
         Vertex d =test.addVertex("D");
         Vertex e =test.addVertex("E");
@@ -112,6 +118,8 @@ public class Djikstra {
         //djikstraResultPrinter(djikstra(test, a));
 
         shortestPathBetween(test, a,g);
+        */
+    
     
     }
 }
