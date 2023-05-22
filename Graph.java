@@ -60,16 +60,33 @@ public class Graph {
     {
         return this.isDirected;
     }
-    public Vertex getVertexByValue(int value)
-    {
-        for (Vertex v: this.vertices)
-        {
-            if(v.getID() == value)
-            { 
-                return v;
-            }
+
+    static void validate (Vertex vertex) throws CantFindVertexException{
+        if(vertex == null){
+            throw new CantFindVertexException("Vertex hasn't been added");
         }
-        return null;
+        
+    }
+    public Vertex getVertexByValue(int value) 
+    {
+
+        Vertex a = null;
+            try {
+                for (Vertex v: this.vertices)
+                {
+                    if(v.getID() == value)
+                    { 
+                        a = v;
+                        return v;
+                    }
+                }
+                validate(a);
+                
+            } catch (CantFindVertexException ex) {
+                System.out.println("Exception occured: " + ex);
+            }
+            return a;
+
     }
 
     public void print()

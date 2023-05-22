@@ -107,6 +107,17 @@ public class Djikstra {
         return verticies;
     }
     
+    public static void addEdges(File f, Graph g) throws FileNotFoundException{
+        Scanner in = new Scanner(f);
+        while(in.hasNextLine()){
+            int firstVertexID = in.nextInt();
+            int secondVertexID = in.nextInt();
+            Vertex v1 = g.getVertexByValue(firstVertexID);
+            Vertex v2 = g.getVertexByValue(secondVertexID);
+            g.addEdge(v1, v2, findDistanceBetweenTwoVertices(v1, v2));
+        }
+        
+    }
     public static double findDistanceBetweenTwoVertices(Vertex v1, Vertex v2){
         double horizontalDistance = v1.getLatitude()- v2.getLatitude();
         double verticalDistance = v1.getLongitude() -v2.getLongitude();
