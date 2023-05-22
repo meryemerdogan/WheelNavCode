@@ -89,7 +89,7 @@ public class Djikstra {
         return path;
     }
      
-    public Vertex[] returnVerticies(File f) throws FileNotFoundException
+    public Vertex[] returnVerticiesToTheGraph(File f, Graph g) throws FileNotFoundException
     {
         Scanner in = new Scanner(f);
         int nuOfVerticies = in.nextInt();
@@ -102,6 +102,7 @@ public class Djikstra {
             int id = in.nextInt(); 
 
             verticies[i] = new Vertex(id,longitude,latitude);
+            g.addVertex(verticies[i]);
         }
         return verticies;
     }
