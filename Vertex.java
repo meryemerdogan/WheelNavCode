@@ -4,6 +4,7 @@ public class Vertex{
 
     private String data;
     private ArrayList<Edge> edges;
+   
 
     Vertex(String input)
     {
