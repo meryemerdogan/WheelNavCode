@@ -97,6 +97,12 @@ public class Djikstra {
 
     public static void main(String[] args) {
         Graph test = new Graph(true,true);
+        Vertex a = new Vertex(0,3,3.26);
+        Vertex b = new Vertex (1,3,4);
+        test.addVertex(a);
+        test.addVertex(b);
+        test.addEdge(a, b, findDistanceBetweenTwoVertices(a, b));
+        shortestPathBetween(test, a, b);
        /* Vertex a =test.addVertex(0,3,3.26);
         Vertex b =test.addVertex(1,);
         Vertex c =test.addVertex("C");

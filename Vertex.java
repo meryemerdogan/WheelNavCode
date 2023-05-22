@@ -7,7 +7,7 @@ public class Vertex{
     private double longitude;
     private double latitude;
 
-    Vertex(int id, double longitude, double latitude)
+    public Vertex(int id, double longitude, double latitude)
     {
         this.data = id;
         this.longitude = longitude;

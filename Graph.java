@@ -14,11 +14,9 @@ public class Graph {
 
     }
 
-    public Vertex addVertex(int data, double lat, double longitude)
+    public void addVertex(Vertex vertex)
     {
-        Vertex newVertex = new Vertex(data,lat,longitude);
-        this.vertices.add(newVertex);
-        return newVertex;
+        this.vertices.add(vertex);
     }
 
     public void addEdge(Vertex vertex1, Vertex vertex2, Double weight)
