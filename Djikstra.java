@@ -1,8 +1,9 @@
 import java.util.*;
 
 public class Djikstra {
+    public static ArrayList<Vertex> path;
 
-    public static Dictionary[] djikstra(Graph g, Vertex startingVertex)
+    private static Dictionary[] djikstra(Graph g, Vertex startingVertex)
     {
         Dictionary<String, Double> distances = new Hashtable<>();
         Dictionary<String, Vertex>  previous = new Hashtable<>();
@@ -41,7 +42,7 @@ public class Djikstra {
         return new Dictionary[] {distances, previous};
     }
 
-    public static void djikstraResultPrinter(Dictionary[] d)
+    public void djikstraResultPrinter(Dictionary[] d)
     {
         System.out.println("Distances:\n");
         for( Enumeration keys = d[0].keys(); keys.hasMoreElements();)
@@ -58,17 +59,18 @@ public class Djikstra {
         }
     }
 
-    public static void shortestPathBetween(Graph g, Vertex startingVertex, Vertex targetVertex)
+    public static ArrayList<Vertex> shortestPathBetween(Graph g, Vertex startingVertex, Vertex targetVertex)
     {
         Dictionary[] djikstraDictionaries= djikstra(g, startingVertex);
         Dictionary distances = djikstraDictionaries[0];
         Dictionary previous = djikstraDictionaries[1];
+        path = new ArrayList<>();
 
         Double distance = (Double) distances.get(targetVertex.getData());
         System.out.println("Shortest Distance between "+ startingVertex.getData()+" and "+targetVertex.getData());
         System.out.println(distance);
 
-        ArrayList<Vertex> path = new ArrayList<>();
+        
         Vertex v = targetVertex; 
 
         while(v.getData() != "Null")
@@ -81,7 +83,11 @@ public class Djikstra {
         {
             System.out.println(pathVertex.getData());
         }
+
+        return path;
     }
+     
+
 
     public static void main(String[] args) {
         Graph test = new Graph(true,true);
@@ -106,7 +112,6 @@ public class Djikstra {
         //djikstraResultPrinter(djikstra(test, a));
 
         shortestPathBetween(test, a,g);
-
     
     }
 }
