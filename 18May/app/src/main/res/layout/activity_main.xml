@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="@string/my_account_info"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="italic|bold"
+        android:textSize="40sp"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userMail"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userID"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/proceed_btn"
+        android:text="Proceed"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        />
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/savedRoutes_btn"
+        android:text="Go To Saved Routes"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        />
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/changePassword_btn"
+        android:text="Change Password"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        />
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/logOut_btn"
+        android:text="LogOut"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        />
+
+
+
+</LinearLayout>
