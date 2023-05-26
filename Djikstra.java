@@ -88,19 +88,30 @@ public class Djikstra {
 
         return path;
     }
-     
-    public Vertex[] returnVerticiesToTheGraph(File f, Graph g) throws FileNotFoundException
+    private static double commaToDot(String s)
     {
+        s = s.replaceAll(",",".");
+        return Double.parseDouble(s);
+    }
+     
+    public static Vertex[] returnVerticiesToTheGraph(File f, Graph g) throws FileNotFoundException
+    {
+        Scanner initial = new Scanner(f);
         Scanner in = new Scanner(f);
-        int nuOfVerticies = in.nextInt();
+        int nuOfVerticies=-1;
+        while(initial.hasNextLine()){
+            nuOfVerticies++;
+            initial.nextLine();
+        }
+        //System.out.println(nuOfVerticies);
         Vertex [] verticies = new Vertex[nuOfVerticies];
-        
+        in.nextLine();
         for (int i = 0; i < nuOfVerticies; i++) {
-            double longitude = in.nextDouble();
-            double latitude = in.nextDouble();
 
+            double longitude = commaToDot(in.next());
+            double latitude = commaToDot(in.next());
             int id = in.nextInt(); 
-
+            //System.out.println(longitude + " " + latitude + " " + id);
             verticies[i] = new Vertex(id,longitude,latitude);
             g.addVertex(verticies[i]);
         }
@@ -115,6 +126,7 @@ public class Djikstra {
             Vertex v1 = g.getVertexByValue(firstVertexID);
             Vertex v2 = g.getVertexByValue(secondVertexID);
             g.addEdge(v1, v2, findDistanceBetweenTwoVertices(v1, v2));
+            //System.out.println(v1.getID() + " " + v2.getID());
         }
         
     }
@@ -127,14 +139,26 @@ public class Djikstra {
 
 
     public static void main(String[] args) {
-        Graph test = new Graph(true,true);
+        File file = new File("Nodes.txt");
+        Graph testGraph = new Graph(true, false);
+        File edgesFile = new File("Edges.txt");
+        try {
+            returnVerticiesToTheGraph(file,testGraph);
+            addEdges(edgesFile, testGraph);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+
+        /*Graph test = new Graph(true,true);
         Vertex a = new Vertex(0,3,3.26);
         Vertex b = new Vertex (1,3,4);
         test.addVertex(a);
         test.addVertex(b);
         test.addEdge(a, b, findDistanceBetweenTwoVertices(a, b));
         shortestPathBetween(test, a, b);
-       /* Vertex a =test.addVertex(0,3,3.26);
+        Vertex a =test.addVertex(0,3,3.26);
         Vertex b =test.addVertex(1,);
         Vertex c =test.addVertex("C");
         Vertex d =test.addVertex("D");

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 public class Graph {
     
@@ -61,32 +62,22 @@ public class Graph {
         return this.isDirected;
     }
 
-    static void validate (Vertex vertex) throws CantFindVertexException{
-        if(vertex == null){
-            throw new CantFindVertexException("Vertex hasn't been added");
-        }
-        
-    }
     public Vertex getVertexByValue(int value) 
     {
 
         Vertex a = null;
-            try {
-                for (Vertex v: this.vertices)
-                {
-                    if(v.getID() == value)
-                    { 
-                        a = v;
-                        return v;
-                    }
-                }
-                validate(a);
-                
-            } catch (CantFindVertexException ex) {
-                System.out.println("Exception occured: " + ex);
+        for (Vertex v: this.vertices)
+        {
+            if(v.getID() == value)
+            { 
+                a = v;
+                return v;
             }
-            return a;
-
+        }
+        if(a == null){
+            throw new NoSuchElementException("Vertex couldn't be found");
+        }
+        return a;
     }
 
     public void print()
