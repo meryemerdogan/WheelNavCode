@@ -19,10 +19,11 @@ import com.google.firebase.auth.UserInfo;
  */
 public class MainActivity extends AppCompatActivity {
 
-    Button logOutButton, proceedButton, savedRoutesButton, changePasswordButton;
+    Button logOutButton, proceedButton, changePasswordButton;
     FirebaseAuth auth;
     FirebaseUser user;
     TextView userMail, userID, username;
+    String name;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         logOutButton = findViewById(R.id.logOut_btn);
         proceedButton = findViewById(R.id.proceed_btn);
-        savedRoutesButton = findViewById(R.id.savedRoutes_btn);
         changePasswordButton = findViewById(R.id.changePassword_btn);
         username = findViewById(R.id.username);
 
@@ -47,9 +47,15 @@ public class MainActivity extends AppCompatActivity {
         else{
             for (UserInfo profile : user.getProviderData()) {
                 // Name, email address, and profile photo Url
-                String name = profile.getDisplayName();
-                username.setText(name);
+                name = profile.getDisplayName();
+
             }
+            for (UserInfo profile : user.getProviderData()) {
+                // Name, email address, and profile photo Url
+                name = profile.getDisplayName();
+
+            }
+            username.setText("username: " + name);
             logOutButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
