@@ -14,6 +14,10 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 /*
 - Some user related codes are derived from firebase.google.com and altered for compatibility
  */
@@ -50,7 +54,30 @@ public class MainActivity extends AppCompatActivity {
                 name = profile.getDisplayName();
 
             }
+            if(name == null){
+                Timer timer = new Timer();
+                TimerTask checkName = new TimerTask() {
+                    @Override
+                    public void run() {
+                        if(name != null){
+                            timer.cancel();
+                            username.setText("username: " + name);
+                        }
+                        else{
+                            username.setText("username waiting");
+                            finish();
+                            overridePendingTransition(0, 0);
+                            startActivity(getIntent());
+                            overridePendingTransition(0, 0);
+                        }
+                    }
+                };
+                timer.scheduleAtFixedRate(checkName, 0, 2500);
+            }
             username.setText("username: " + name);
+
+
+
             logOutButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
