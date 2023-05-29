@@ -14,7 +14,9 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
-
+/*
+- Some user related codes are derives from firebase.google.com and altered for compatibility
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button logOutButton, proceedButton, savedRoutesButton, changePasswordButton;

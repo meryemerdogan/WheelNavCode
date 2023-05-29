@@ -19,7 +19,9 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
+/*
+- Some user related codes are derives from firebase.google.com and altered for compatibility
+ */
 public class ChangePassword extends AppCompatActivity {
 
     TextInputEditText oldPassword, password, password2;
@@ -62,7 +64,7 @@ public class ChangePassword extends AppCompatActivity {
                         if(currentUser.reauthenticate(credential).isSuccessful()){
 
                         }
-// Prompt the user to re-provide their sign-in credentials
+
                         currentUser.reauthenticate(credential)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override

@@ -20,7 +20,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-
+/*
+- Some user related codes are derives from firebase.google.com and altered for compatibility
+ */
 public class Register extends AppCompatActivity {
 
     TextInputEditText email, password, password2, userName;
