@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
 /*
-- Some user related codes are derives from firebase.google.com and altered for compatibility
+- Some user related codes are derived from firebase.google.com and altered for compatibility
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         changePasswordButton = findViewById(R.id.changePassword_btn);
         username = findViewById(R.id.username);
 
-        user = auth.getCurrentUser();
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         if(user == null){
             Intent i = new Intent(getApplicationContext(), LogIn.class);
@@ -45,11 +45,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         else{
-            for (UserInfo profile : user.getProviderData()) {
-                // Name, email address, and profile photo Url
-                name = profile.getDisplayName();
-
-            }
             for (UserInfo profile : user.getProviderData()) {
                 // Name, email address, and profile photo Url
                 name = profile.getDisplayName();

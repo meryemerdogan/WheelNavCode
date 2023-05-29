@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 /*
-- Some user related codes are derives from firebase.google.com and altered for compatibility
+- Some user related codes are derived from firebase.google.com and altered for compatibility
  */
 public class Register extends AppCompatActivity {
 
@@ -76,7 +76,7 @@ public class Register extends AppCompatActivity {
                 mail = email.getText().toString();
                 pass = password.getText().toString();
                 pass2 = password2.getText().toString();
-                mAuth = FirebaseAuth.getInstance();
+
                 userNameString = userName.getText().toString();
 
                 if(TextUtils.isEmpty(mail)){
@@ -95,6 +95,7 @@ public class Register extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        mAuth = FirebaseAuth.getInstance();
                                         prgBar.setVisibility(View.GONE);
                                         Toast.makeText(Register.this, "Account created!",
                                                 Toast.LENGTH_SHORT).show();

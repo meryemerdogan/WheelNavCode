@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 /*
-- Some user related codes are derives from firebase.google.com and altered for compatibility
+- Some user related codes are derived from firebase.google.com and altered for compatibility
  */
 public class LogIn extends AppCompatActivity {
 
