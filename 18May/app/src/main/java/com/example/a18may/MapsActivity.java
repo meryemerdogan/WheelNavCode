@@ -171,10 +171,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             fromID = 0;
         }else if(from.equals("FA"))
         {
-            fromID = 128;
+            fromID = 85;
         }else if(from.equals("FB"))
         {
-            fromID = 128;
+            fromID = 81;
+        }else if(from.equals("FC"))
+        {
+            fromID = 81;
         }else if(from.equals("FF"))
         {
             fromID = 128;
@@ -220,5 +223,75 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             fromID = 60;
         }
 
+        if(to.equals("A"))
+        {
+            toID = 57;
+        }
+        else if(to.equals("B"))
+        {
+            toID = 127;
+        }
+        else if(to.equals("EA"))
+        {
+            toID = 3;
+        }else if(to.equals("EB"))
+        {
+            toID = 118;
+        }else if(to.equals("EE"))
+        {
+            toID = 0;
+        }else if(to.equals("FA"))
+        {
+            toID = 85;
+        }else if(to.equals("FB"))
+        {
+            toID = 81;
+        }else if(to.equals("FC"))
+        {
+            toID = 81;
+        }else if(to.equals("FF"))
+        {
+            toID = 128;
+        }else if(to.equals("G"))
+        {
+            toID = 35;
+        }else if(to.equals("H"))
+        {
+            toID = 55;
+        }else if(to.equals("L"))
+        {
+            toID = 33;
+        }else if(to.equals("MA"))
+        {
+            toID = 59;
+        }
+        else if(to.equals("MASJID"))
+        {
+            toID = 102;
+        }else if(to.equals("METEKSAN MARKET"))
+        {
+            toID = 130;
+        }else if(to.equals("METEKSAN BOOKSTORE"))
+        {
+            toID = 93;
+        }else if(to.equals("SPEED"))
+        {
+            toID = 94;
+        }else if(to.equals("SA"))
+        {
+            toID = 74;
+        }else if(to.equals("SB"))
+        {
+            toID = 72;
+        }else if(to.equals("T"))
+        {
+            toID = 130;
+        }else if(to.equals("UNAM"))
+        {
+            toID = 129;
+        }else if(to.equals("V"))
+        {
+            toID = 60;
+        }
     }
 }
