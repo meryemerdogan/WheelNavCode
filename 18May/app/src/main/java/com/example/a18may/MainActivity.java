@@ -62,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
             });
+            proceedButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(), SelectRoadsActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            });
         }
     }
 }
