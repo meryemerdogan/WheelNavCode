@@ -2,6 +2,7 @@ package com.example.a18may;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -59,11 +60,21 @@ import java.util.ArrayList;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private String from;
+    private String to;
+
+    private int fromID;
+    private int toID;
     private ActivityMapsBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent prevIntent = getIntent();
+        from = prevIntent.getStringExtra("from");
+        to = prevIntent.getStringExtra("to");
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -126,7 +137,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         returnVerticiesToTheGraph(textNodes,testGraph);
         addEdges(textEdges, testGraph);
 
-        drawTheRoad(testGraph,3,57);
+        nameToID(from,to);
+        drawTheRoad(testGraph,fromID,toID);
 
     }
     public void drawTheRoad(Graph testGraph,int Vertex1ID, int Vertex2ID){
@@ -137,5 +149,76 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         PathTest.PolyLineTest(mMap,vertices);
+    }
+    private void nameToID(String from, String to)
+    {
+        if(from.equals("A"))
+        {
+            fromID = 57;
+        }
+        else if(from.equals("B"))
+        {
+           fromID = 127;
+        }
+        else if(from.equals("EA"))
+        {
+            fromID = 3;
+        }else if(from.equals("EB"))
+        {
+            fromID = 118;
+        }else if(from.equals("EE"))
+        {
+            fromID = 0;
+        }else if(from.equals("FA"))
+        {
+            fromID = 128;
+        }else if(from.equals("FB"))
+        {
+            fromID = 128;
+        }else if(from.equals("FF"))
+        {
+            fromID = 128;
+        }else if(from.equals("G"))
+        {
+            fromID = 35;
+        }else if(from.equals("H"))
+        {
+            fromID = 55;
+        }else if(from.equals("L"))
+        {
+            fromID = 33;
+        }else if(from.equals("MA"))
+        {
+            fromID = 59;
+        }
+        else if(from.equals("MASJID"))
+        {
+            fromID = 102;
+        }else if(from.equals("METEKSAN MARKET"))
+        {
+            fromID = 130;
+        }else if(from.equals("METEKSAN BOOKSTORE"))
+        {
+            fromID = 93;
+        }else if(from.equals("SPEED"))
+        {
+            fromID = 94;
+        }else if(from.equals("SA"))
+        {
+            fromID = 74;
+        }else if(from.equals("SB"))
+        {
+            fromID = 72;
+        }else if(from.equals("T"))
+        {
+            fromID = 130;
+        }else if(from.equals("UNAM"))
+        {
+            fromID = 129;
+        }else if(from.equals("V"))
+        {
+            fromID = 60;
+        }
+
     }
 }

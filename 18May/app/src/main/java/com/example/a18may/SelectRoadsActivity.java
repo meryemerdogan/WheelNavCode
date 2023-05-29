@@ -40,8 +40,10 @@ public class SelectRoadsActivity extends AppCompatActivity implements AdapterVie
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+                i.putExtra("from", from );
+                i.putExtra("to", to );
+
                 startActivity(i);
-                finish();
             }
         });
 

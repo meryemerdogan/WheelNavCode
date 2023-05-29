@@ -24,12 +24,25 @@
     <string-array name="buildingNames">
         <item>A</item>
         <item>B</item>
-        <item>C</item>
-        <item>D</item>
-        <item>E</item>
-        <item>F</item>
+        <item>EE</item>
+        <item>EA</item>
+        <item>EB</item>
+        <item>FA</item>
+        <item>FB</item>
+        <item>FC</item>
+        <item>FF</item>
         <item>G</item>
         <item>H</item>
+        <item>L</item>
+        <item>MA</item>
+        <item>MASJID</item>
+        <item>METEKSAN MARKET</item>
+        <item>METEKSAN BOOKSTORE</item>
+        <item>SPEED</item>
+        <item>SA</item>
+        <item>SB</item>
+        <item>T</item>
+        <item>UNAM</item>
         <item>V</item>
     </string-array>
 </resources>
