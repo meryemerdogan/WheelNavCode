@@ -19,4 +19,16 @@
     <string name="enter_your_mail_account">Enter your mail account</string>
     <string name="send_mail_to_reset_password">Send Mail to Reset Password</string>
     <string name="continue_as_guest">Continue as guest.</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string-array name="buildingNames">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>V</item>
+    </string-array>
 </resources>
