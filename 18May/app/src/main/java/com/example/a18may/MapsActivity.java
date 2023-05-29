@@ -180,7 +180,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             fromID = 81;
         }else if(from.equals("FF"))
         {
-            fromID = 128;
+            fromID = 92;
         }else if(from.equals("G"))
         {
             fromID = 35;
@@ -251,7 +251,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             toID = 81;
         }else if(to.equals("FF"))
         {
-            toID = 128;
+            toID = 92;
         }else if(to.equals("G"))
         {
             toID = 35;
