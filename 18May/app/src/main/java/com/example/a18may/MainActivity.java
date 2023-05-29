@@ -13,13 +13,14 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 
 public class MainActivity extends AppCompatActivity {
 
     Button logOutButton, proceedButton, savedRoutesButton, changePasswordButton;
     FirebaseAuth auth;
     FirebaseUser user;
-    TextView userMail, userID;
+    TextView userMail, userID, username;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         proceedButton = findViewById(R.id.proceed_btn);
         savedRoutesButton = findViewById(R.id.savedRoutes_btn);
         changePasswordButton = findViewById(R.id.changePassword_btn);
+        username = findViewById(R.id.username);
 
         user = auth.getCurrentUser();
 
@@ -41,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         else{
+            for (UserInfo profile : user.getProviderData()) {
+                // Name, email address, and profile photo Url
+                String name = profile.getDisplayName();
+                username.setText(name);
+            }
             logOutButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -54,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             userMail.setText("email: " + user.getEmail());
             userID = findViewById(R.id.userID);
             userID.setText("ID: " + user.getUid());
+
             changePasswordButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

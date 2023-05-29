@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,10 +19,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class Register extends AppCompatActivity {
 
-    TextInputEditText email, password, password2;
+    TextInputEditText email, password, password2, userName;
     Button registerButton;
     FirebaseAuth mAuth;
 
@@ -53,6 +55,7 @@ public class Register extends AppCompatActivity {
         registerButton = findViewById(R.id.register_btn);
         prgBar = findViewById(R.id.progressBar);
         passTo = findViewById(R.id.passToLogIn);
+        userName = findViewById(R.id.username);
 
         passTo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,11 +70,12 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 prgBar.setVisibility(View.VISIBLE);
-                String mail, pass, pass2;
+                String mail, pass, pass2, userNameString;
                 mail = email.getText().toString();
                 pass = password.getText().toString();
                 pass2 = password2.getText().toString();
                 mAuth = FirebaseAuth.getInstance();
+                userNameString = userName.getText().toString();
 
                 if(TextUtils.isEmpty(mail)){
                     Toast.makeText(Register.this, "Enter your mail address", Toast.LENGTH_SHORT).show();
@@ -92,6 +96,20 @@ public class Register extends AppCompatActivity {
                                         prgBar.setVisibility(View.GONE);
                                         Toast.makeText(Register.this, "Account created!",
                                                 Toast.LENGTH_SHORT).show();
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                .setDisplayName(userNameString)
+                                                .build();
+
+                                        user.updateProfile(profileUpdates)
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+
+                                                        }
+                                                    }
+                                                });
                                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(i);
                                         finish();

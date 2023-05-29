@@ -20,6 +20,7 @@
     <string name="send_mail_to_reset_password">Send Mail to Reset Password</string>
     <string name="continue_as_guest">Continue as guest.</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="username">username</string>
     <string-array name="buildingNames">
         <item>A</item>
         <item>B</item>

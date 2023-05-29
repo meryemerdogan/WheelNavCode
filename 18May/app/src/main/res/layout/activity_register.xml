@@ -45,6 +45,14 @@
         android:height="50dp"
         android:id="@+id/password2"
         android:layout_width="match_parent"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.textfield.TextInputEditText android:layout_height="wrap_content"
+        android:hint="@string/username"
+        android:height="50dp"
+        android:id="@+id/username"
+        android:layout_width="match_parent"/>
     <ProgressBar
         android:layout_width="wrap_content"
         android:id="@+id/progressBar"
