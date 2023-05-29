@@ -128,6 +128,7 @@ public class Djikstra {
             Vertex v2 = g.getVertexByValue(secondVertexID);
             g.addEdge(v1, v2, findDistanceBetweenTwoVertices(v1, v2));
             //System.out.println(v1.getID() + " " + v2.getID());
+        
         }
         
     }
@@ -140,9 +141,9 @@ public class Djikstra {
 
 
     public static void main(String[] args) {
-        File file = new File("Nodes.txt");
+        File file = new File("AllNodes.txt");
         Graph testGraph = new Graph(true, false);
-        File edgesFile = new File("Edges.txt");
+        File edgesFile = new File("AllEdges.txt");
         try {
             returnVerticiesToTheGraph(file,testGraph);
             addEdges(edgesFile, testGraph);
@@ -151,6 +152,11 @@ public class Djikstra {
             e.printStackTrace();
         }
         
+        ArrayList<Vertex> vertices = shortestPathBetween(testGraph, testGraph.getVertexByValue(3), testGraph.getVertexByValue(57));
+        for(Vertex v: vertices){
+            System.out.println(v.getID());
+        }
+        System.out.println();
 
         /*Graph test = new Graph(true,true);
         Vertex a = new Vertex(0,3,3.26);
