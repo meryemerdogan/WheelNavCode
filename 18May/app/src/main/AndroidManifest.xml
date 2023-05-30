@@ -29,6 +29,7 @@
         tools:targetApi="31">
         <activity
             android:name=".SelectRoadsActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -47,20 +48,24 @@
 
         <activity
             android:name=".MapsActivity"
+            android:parentActivityName=".SelectRoadsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".ForgotPassword"
+            android:parentActivityName=".LogIn"
             android:label="@string/forgot_password"
             android:exported="false" />
         <activity
             android:name=".ChangePassword"
+            android:parentActivityName=".MainActivity"
             android:label="@string/change_password"
             android:exported="false" />
         <activity
             android:name=".Register"
             android:exported="false"
             android:label="@string/register"
+            android:parentActivityName=".LogIn"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".LogIn"
