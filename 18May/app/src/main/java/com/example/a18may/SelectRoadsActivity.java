@@ -1,5 +1,6 @@
 package com.example.a18may;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -65,6 +66,10 @@ public class SelectRoadsActivity extends AppCompatActivity implements AdapterVie
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
+        AlertDialog.Builder alert = new AlertDialog.Builder(SelectRoadsActivity.this);
+        alert.setTitle("No elevator!");
+        alert.setMessage("The building you selected to go to does not have any elevators inside.");
+        alert.setNeutralButton("Continue", null);
     }
+
 }
