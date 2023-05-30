@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,6 +38,7 @@ public class SelectRoadsActivity extends AppCompatActivity implements AdapterVie
         spinner_2.setAdapter(adapter2);
         spinner_2.setOnItemSelectedListener(this);
 
+
         showRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,15 +63,47 @@ public class SelectRoadsActivity extends AppCompatActivity implements AdapterVie
         else{
             String text = parent.getItemAtPosition(position).toString();
             to = text;
+            if(to.equals("EB"))
+            {
+                noElevator();
+            }
+            else if(to.equals("FA"))
+            {
+                noElevator();
+            }
+            else if(to.equals("FB"))
+            {
+                noElevator();
+            }
+            else if(to.equals("FC"))
+            {
+                noElevator();
+            }
+            else if(to.equals("G"))
+            {
+                noElevator();
+            }
+            else if(to.equals("L"))
+            {
+                noElevator();
+            }
+            else if(to.equals("MA"))
+            {
+                noElevator();
+            }
         }
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    private void noElevator()
+    {
         AlertDialog.Builder alert = new AlertDialog.Builder(SelectRoadsActivity.this);
         alert.setTitle("No elevator!");
         alert.setMessage("The building you selected to go to does not have any elevators inside.");
         alert.setNeutralButton("Continue", null);
+        alert.show();
     }
-
 }
