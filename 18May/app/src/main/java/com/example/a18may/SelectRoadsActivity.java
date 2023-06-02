@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class SelectRoadsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String from;
@@ -21,6 +24,8 @@ public class SelectRoadsActivity extends AppCompatActivity implements AdapterVie
     ArrayAdapter<CharSequence> adapter2;
     Button showRoute;
     TextView goBack;
+    FirebaseAuth mAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +33,25 @@ public class SelectRoadsActivity extends AppCompatActivity implements AdapterVie
         setContentView(R.layout.activity_select_roads);
         showRoute = findViewById(R.id.button);
         goBack = findViewById(R.id.go_back);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+
+
 
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
-                finish();
+
+                if(user == null){
+                    Intent i = new Intent(getApplicationContext(), LogIn.class);
+                    startActivity(i);
+                    finish();
+                }
+                else{
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
             }
         });
 

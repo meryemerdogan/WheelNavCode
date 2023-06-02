@@ -28,7 +28,7 @@ public class LogIn extends AppCompatActivity {
     Button LogButton;
     FirebaseAuth mAuth;
     ProgressBar prgBar;
-    TextView passTo, forgotPass;
+    TextView passTo, forgotPass, contGuest;
 
     @Override
     public void onStart() {
@@ -53,6 +53,16 @@ public class LogIn extends AppCompatActivity {
         prgBar = findViewById(R.id.progressBar);
         passTo = findViewById(R.id.passToRegister);
         forgotPass = findViewById(R.id.forgotPassword);
+        contGuest = findViewById(R.id.continueGuest);
+
+        contGuest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), SelectRoadsActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         passTo.setOnClickListener(new View.OnClickListener() {
             @Override
