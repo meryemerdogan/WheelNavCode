@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class ForgotPassword extends AppCompatActivity {
 
     TextInputEditText mail;
+    TextView goBack;
     Button sendMail;
     ProgressBar bar;
     FirebaseAuth auth;
@@ -36,6 +38,16 @@ public class ForgotPassword extends AppCompatActivity {
         sendMail = findViewById(R.id.resetPwd_btn);
         bar = findViewById(R.id.progressBar);
         auth = FirebaseAuth.getInstance();
+        goBack = findViewById(R.id.go_back);
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), LogIn.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         sendMail.setOnClickListener(new View.OnClickListener() {
             @Override

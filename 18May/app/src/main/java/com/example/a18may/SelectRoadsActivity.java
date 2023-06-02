@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class SelectRoadsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -19,12 +20,23 @@ public class SelectRoadsActivity extends AppCompatActivity implements AdapterVie
     ArrayAdapter<CharSequence> adapter1;
     ArrayAdapter<CharSequence> adapter2;
     Button showRoute;
+    TextView goBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_roads);
         showRoute = findViewById(R.id.button);
+        goBack = findViewById(R.id.go_back);
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         Spinner spinner_1 = findViewById(R.id.spinner1);
         adapter1 = ArrayAdapter.createFromResource(this, R.array.buildingNames, android.R.layout.simple_spinner_item);

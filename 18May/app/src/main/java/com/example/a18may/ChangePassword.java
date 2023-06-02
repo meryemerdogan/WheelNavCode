@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class ChangePassword extends AppCompatActivity {
 
     TextInputEditText oldPassword, password, password2;
+    TextView goBack;
     Button updateButton;
     ProgressBar prgBar;
     FirebaseAuth auth;
@@ -43,6 +45,16 @@ public class ChangePassword extends AppCompatActivity {
         oldPassword = findViewById(R.id.oldPassword);
         updateButton = findViewById(R.id.update_btn);
         prgBar = findViewById(R.id.progressBar);
+        goBack = findViewById(R.id.go_back);
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,6 +23,7 @@
     <string name="username">username</string>
     <string name="change_password">Change Password</string>
     <string name="wheelnav">WheelNav</string>
+    <string name="go_back">Go back</string>
     <string-array name="buildingNames">
         <item>A</item>
         <item>B</item>
