@@ -143,7 +143,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
     public void drawTheRoad(Graph testGraph,int Vertex1ID, int Vertex2ID){
+        Vertex v1 = testGraph.getVertexByValue(Vertex1ID);
+        Vertex v2 = testGraph.getVertexByValue(Vertex2ID);
         ArrayList<Vertex> vertices = shortestPathBetween( testGraph,testGraph.getVertexByValue(Vertex1ID), testGraph.getVertexByValue(Vertex2ID));
+        LatLng a = new LatLng(v1.getLatitude(), v1.getLongitude());
+        Log.d("polylinetest", "vertice 1 added");
+        LatLng b = new LatLng(v2.getLatitude(), v2.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(a).title("Start"));
+        mMap.addMarker(new MarkerOptions().position(b).title("End"));
         for(Vertex v: vertices){
             System.out.println(v.getID());
             Log.d("MainActivity nodes printed", "nodes to be printed");
@@ -151,6 +158,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         PathTest.PolyLineTest(mMap,vertices);
     }
+  
     private void nameToID(String from, String to)
     {
         if(from.equals("A"))
