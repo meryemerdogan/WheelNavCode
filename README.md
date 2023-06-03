@@ -12,11 +12,10 @@ Dependencies:
 
 To execute this code, you have to define "MAPS_API_KEY=" in your local.properties file of your gradle folder. You have to provide and assign a google maps android studio key which can be taken by following the steps from this site: https://developers.google.com/maps/documentation/android-sdk/start?hl=tr as we cannot publicly share our API key.
 
-Also make sure that in your AndroidManifest.xml file there are components like this:
+Also make sure that in your AndroidManifest.xml file there are components of meta-data involving:
 
-<meta-data
 android:name="com.google.android.maps.v2.API_KEY"
- android:value= "${MAPS_API_KEY}"></meta-data>
+android:value= "${MAPS_API_KEY}"
  
 and other permissions of Google Maps Android Studio Sdk. If the repository is cloned correctly, they should be already visible in the project. 
 
