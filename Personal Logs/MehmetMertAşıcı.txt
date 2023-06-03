@@ -1,0 +1,50 @@
+- April 10-17 week : (midterms week)
+
+	1. Downloaded Android Studio
+
+	2. Finished 4h video on Youtube (https://www.youtube.com/watch?v=tZvjSl9dswg)
+    
+	3. Started to work on some activities.
+        
+        
+- April 18-24 week :
+
+	- UI design for presentation and report
+
+- April 25-30 week :
+
+	1. Preparations for UI presentation and report
+	
+	2. Started to implement the code for some activities.
+
+- May 1-7 week :
+
+	1. Preparations for Detailed Design presentation and report
+
+	2. Implementation of the xml files for related activities.
+
+- May 8-14 week :
+
+	- Implementation of the code cont.
+
+- May 15-21 week :
+
+	- Finished Detailed design report
+
+- May 22-28 week :
+
+	1. Learned Firebase for user authentication.
+
+	2. End of coding of activities.
+
+- May 29- June 3 week :
+
+	1. Final corrections of the code
+
+	2. Writing final versions of reports
+
+-----------------------------------------------------------
+
+The time I spent for this project changed from week to week. 
+However, I believe it took approximately 4 hours every week if we exclude the parts that I learned and practiced during the CS102 lectures.
+The final week of coding was the week that I spent time the most.
