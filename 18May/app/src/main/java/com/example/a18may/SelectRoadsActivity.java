@@ -1,5 +1,5 @@
 package com.example.a18may;
-
+//Copyright https://developer.android.com/develop/ui/views/components/spinner#java
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
