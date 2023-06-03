@@ -1,5 +1,6 @@
 package com.example.a18may;
-
+//Copyright Google Maps Platform Documentation https://developers.google.com/maps/documentation/android-sdk?hl=tr
+// implemented-changed by @author İlsu Karadağ
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
