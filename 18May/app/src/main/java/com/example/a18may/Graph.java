@@ -1,3 +1,5 @@
+//Some of the code was inspired and modified from https://www.youtube.com/watch?v=dS44jZyj5gU&t=4175s 
+
 package com.example.a18may;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
