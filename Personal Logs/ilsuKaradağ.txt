@@ -1,0 +1,36 @@
+13-19 March
+-Working on requirement stage report
+
+27 March- 10 April 
+- learning Graph Algorithms a bit and also some java implementation from youtube
+- starting to Android Studio tutorials and learning + installing
+
+17-23 April
+- starting Android Studio UI design implementation (+ starting UI stage presentation) for pages
+
+23 April- 1 May
+- UI stage presentation map pages 
+- UI report → corresponding part of the presentation
+- Requirements report editing for my part
+- learning a bit of SQLite database for Android Studio (but we changed our minds and used firebase instead)
+        https://www.youtube.com/watch?v=312RhjfetP8
+        
+1 May-8 May
+-trying to decide some parts such as how to visualize our road since detailed design report was close
+
+8 May- 14 May
+-learning/ trying to implement graphs and algortihms (DFS, BFS, Dijkstra ...) so that we can use the most useful one + figuring out the details of our graph in bilkent
+
+14 May - 21 May 
+-Detailed design report, determining the classes, methods and activites for my parts.
+-Also changed and finalised the way to visualize the road using the API of Google Maps. Started to looking into its methods and watching videos to make sure we can use it.
+
+22 May- 28 May
+- Learning all the needed dependencies to manage to use Google Maps sdk and implementing it to bilkent campus by determining required nodes for road fragments and their edges in Google Eart Pro.
+
+29 May- 3 June
+-Finalising and making small corrections + testing
+-Working on demo presentation
+
+
+
