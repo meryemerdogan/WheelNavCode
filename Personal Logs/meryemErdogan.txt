@@ -1,0 +1,36 @@
+- April 10-17 week : (midterms week)
+    1. Downloaded Android Studio
+    2. Finished 4h video on Youtube
+    https://www.youtube.com/watch?v=tZvjSl9dswg
+    
+    3. Started a Udemy course for android studio (first 2 chapters)
+        
+        https://www.udemy.com/course-dashboard-redirect/?course_id=1207662
+        
+- April 18-24 week :
+    - UI design for presentation and report
+    - Still working on the Udemy course
+
+- April 25-30 week :
+    - Preparations for UI presentation and report
+
+- May 1-7 week :
+    - Preparations for Detailed Design presentation and report
+    - Watched the Udemy course to gain an idea about using Android Studio for the project
+
+- May 8-14 week :
+    - Started studying graph algorithms from the book & internet
+
+- May 15-21 week :
+    - Finished Detailed design report
+    - Implementation of some graph methods
+
+- May 22-28 week :
+    - Learned Google Maps API + implementation of some maps methods
+    - Implementation of Select Routes activity 
+
+- May 29- June 3 week :
+    - Final corrections of the code
+    - Writing final versions of reports
+
+I spent approximately 5 hours per week.
