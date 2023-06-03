@@ -1,0 +1,47 @@
+Meetings:
+**April 17 Mon: 
+
+- discussed the use of notion
+- planned a face-to-face meeting on April 19 Wednesday
+
+**April 19 Wed:
+
+- discussed UI design
+- sent an e-mail to TA
+- decided on a deadline for presentation
+
+**April 24 Mon:
+
+- discussed UI design presentation
+- nearly finished UI design presentation
+- decided to practice presentation on Tuesday
+
+**April 25 Tue:
+
+- finished UI design presentation
+- practiced presentation
+
+**May 5 Fri:
+
+- discussed & divided the work for detailed design report
+
+**May 10 Wed:
+
+- decided working on graph algorithms from: 
+
+https://algs4.cs.princeton.edu/40graphs/
+https://www.coursera.org/learn/algorithms-part2
+
+- decided on the database (firebase)
+
+**May 16 Tue:
+
+- finished the implementation of graph API classes
+
+**May 20 Sat:
+
+- finished Detailed Design Report
+
+
+
+
