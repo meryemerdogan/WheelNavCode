@@ -102,7 +102,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         LatLng bilkent = new LatLng(39.86926298,32.74880535);
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(bilkent, 17);
-        mMap.addMarker(new MarkerOptions().position(bilkent).title("Marker in Bilkent"));
         mMap.moveCamera(cameraUpdate);
         googleMap.animateCamera(cameraUpdate);
         takeInput();
