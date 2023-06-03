@@ -1,0 +1,29 @@
+- April 10-17: (midterms week)
+    - Downloaded Android Studio
+    - Researched and studied on graph algorithms
+            
+- April 18-24:
+    - UI design for presentation and report
+    - Studying Dijkstra’s algorithm and Bellman-Ford algorithm
+
+- April 25-30:
+    - Preparing UI presentation and report
+
+- May 1-7:
+    - Making the Detailed Design presentation and report
+    - Studying how to use Android Studio
+
+- May 8-14:
+    - Further learning graph algorithms and Android Studio
+
+- May 15-21:
+    - Finished Detailed design report.
+    - Learned Dijkstra’s algorithm in java and implemented the graph algorithm
+
+- May 22-28:
+    - Learned about Google Maps API 
+
+- May 29- June 3:
+    - Made final versions of reports, demo video and presentation
+
+I spent approximately 4 hours per week.
